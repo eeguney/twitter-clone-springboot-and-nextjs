@@ -24,7 +24,7 @@ A fullstack Twitter clone with Spring Boot and NextJS.
 - **JS Cookie**
 - **React Modal**
 - **Pure Sass** and **Scss**
-- Responsive design
+- **Responsive** design
 
 **Server-side:**
 
