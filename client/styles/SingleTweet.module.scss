@@ -1,0 +1,158 @@
+@import "mixin.scss";
+
+.tweet {
+  @include flex;
+  flex-direction: column;
+  padding: 20px;
+  border-bottom: 1px solid $color-navbar-border;
+  user-select: none;
+  @include transition;
+
+  .content {
+    flex: 1;
+    margin: 10px 0;
+  }
+
+  .tweetText {
+    font-size: 23px;
+    line-height: 28px;
+    color: #222;
+    word-wrap: break-word;
+    font-weight: 400;
+  }
+
+  &:hover {
+    .quote_tweet .inner {
+      background-color: white;
+    }
+  }
+  .tweetUser {
+    flex: 1 1;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 10px;
+    .userProfilePhoto {
+      img {
+        width: 52px;
+        height: 52px;
+        @include rounded;
+      }
+    }
+    label {
+      @include flex;
+      flex-direction: column;
+      h3 {
+        font-size: 16px;
+        font-weight: 600;
+        margin-right: 10px;
+        margin-bottom: 5px;
+        a {
+          color: black;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+      span {
+        font-size: 15px;
+        color: #666;
+        margin-right: 15px;
+        &.time {
+          position: relative;
+          &::before {
+            content: "";
+            position: absolute;
+            left: -7px;
+            top: -2px;
+            bottom: 0;
+            margin: auto;
+            width: 3px;
+            height: 3px;
+            background-color: #666;
+            @include rounded;
+          }
+        }
+      }
+    }
+  }
+  .tweetDate {
+    margin: 10px 0;
+    margin-bottom: 20px;
+    font-size: 15px;
+    color: #666;
+  }
+  .tweetLikeRetweetInfo {
+    display: flex;
+    padding: 20px 0;
+    border-width: 1px 0;
+    border-color: $color-navbar-border;
+    border-style: solid;
+    span {
+      color: #666;
+      font-size: 14px;
+      margin-right: 25px;
+      a {
+        color: #666;
+        &:hover {
+          text-decoration: underline;
+          text-decoration-color: #000;
+        }
+      }
+      strong {
+        color: #000;
+        font-weight: 700;
+      }
+    }
+  }
+  .tweetOptions {
+    display: flex;
+    justify-content: space-around;
+    padding: 5px 0;
+    margin: 5px 0;
+    position: relative;
+    .comment {
+      :hover {
+          fill: $color-main-blue;
+      }
+    }
+    .retweet {
+      :hover {
+          fill: $color-main-green;
+      }
+    }
+    .like {
+      :hover {
+          fill: $color-main-red;
+      }
+    }
+    .share {
+      :hover {
+          fill: $color-main-blue;
+      }
+    }
+  }
+  
+}
+
+.retweetSelector {
+  position: absolute;
+  @include flex;
+  flex-direction: column;
+  top: 40px;
+  left: 60px;
+  background: #fff;
+  width: 175px;
+  box-shadow: 0px 0px 6px -3px #333;
+  z-index: 9;
+  button {
+    padding: 15px;
+    text-align: left;
+    a {
+      color: initial;
+    }
+    &:hover {
+      background-color: $color-navbar-links-hover;
+    }
+  }
+}

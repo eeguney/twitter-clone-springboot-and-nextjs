@@ -1,0 +1,159 @@
+@import "mixin.scss";
+
+.navbar {
+  @include fixedBottom;
+  @include flex;
+  @include alignCenter;
+  width: 100%;
+  height: $width-navbar;
+  padding: 0 20px;
+  border-top: 1px solid $color-navbar-border;
+  background-color: white;
+  z-index: 99;
+  // responsive
+  @include mobile {
+  }
+  @include tablet-s {
+    @include flexCol;
+    @include spaceBetween;
+    position: sticky;
+    top: 0;
+    bottom: inherit;
+    padding: 13px 0;
+    width: $width-navbar;
+    height: 100vh;
+    border-top: 0;
+    @include alignEnd;
+  }
+  @include tablet-m {
+    flex-grow: 1;
+    padding: 13px 40px;
+    @include alignCenter;
+  }
+  // responsive
+  @include desktop-m {
+    width: auto;
+    @include alignEnd;
+    padding: 13px 20px;
+  }
+  .menu {
+    @include flex;
+    gap: 13px;
+    flex: 1;
+    padding: 0 12px;
+    // responsive
+    @include tablet-s {
+      @include flexCol;
+      justify-content: normal;
+    }
+    .logo {
+      @include rounded;
+      display: none;
+      width: fit-content;
+      width: $width-navbar-link;
+      height: $width-navbar-link;
+      &:hover {
+        background-color: $color-extra-light-blue;
+      }
+      // responsive
+      @include tablet-s {
+        @include flexCol;
+        @include alignCenter;
+        @include justifyCenter;
+        @include transition;
+      }
+    }
+    nav {
+      @include flex;
+      @include justifyBetween;
+      @include alignCenter;
+      gap: 10px;
+      flex: 1;
+      // responsive
+      @include tablet-s {
+        @include flexCol;
+        justify-content: normal;
+        @include alignNormal;
+        flex: none;
+      }
+      // responsive
+      @include desktop-m {
+        width: 230px;
+      }
+      a {
+        @include flex;
+        @include alignCenter;
+        @include justifyCenter;
+        @include transition;
+        @include rounded;
+        position: relative;
+        width: $width-navbar-link;
+        height: $width-navbar-link;
+        text-decoration: none;
+        &.hiddenOnMobile {
+          display: none;
+          // responsive
+          @include tablet-s {
+            display: flex;
+          }
+        }
+        &:hover {
+          background: $color-navbar-links-hover;
+        }
+        @include desktop-m {
+          @include justifyStart;
+          width: fit-content;
+          padding: 11px;
+          padding-right: 25px;
+        }
+        label {
+          display: none;
+          @include desktop-m {
+            display: block;
+            margin-left: 20px;
+            font-weight: 400;
+            font-size: 20px;
+            color: black;
+          }
+          &.bold {
+            font-weight: 600;
+          }
+        }
+      }
+    }
+  }
+  .userInfo {
+    @include flex;
+    @include justifyBetween;
+    width: 275px;
+    margin-bottom: 20px;
+    @include mobile {
+      display: none;
+    }
+    .left {
+      @include flex;
+      @include alignCenter;
+      img {
+        @include rounded;
+        width: 40px;
+        height: 40px;
+      }
+      .username {
+        margin-left: 10px;
+        display: none;
+        line-height: 17px;
+        @include desktop-m {
+          display: block;
+        }
+        h3 {
+          font-weight: 600;
+          font-size: 15px;
+        }
+        p {
+          font-size: 13px;
+          color: #777;
+        }
+      }
+    }
+  }
+}

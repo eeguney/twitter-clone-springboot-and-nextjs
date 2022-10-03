@@ -1,0 +1,136 @@
+@import "mixin.scss";
+
+.tweet {
+  @include flex;
+  padding: 20px;
+  border-bottom: 1px solid $color-navbar-border;
+  user-select: none;
+  cursor: pointer;
+  gap: 10px;
+  @include transition;
+  &:hover {
+    background-color: $color-navbar-links-hover;
+  }
+  .userProfilePhoto {
+    img {
+      width: 45px;
+      height: 45px;
+      @include rounded;
+      &:hover {
+        filter: contrast(0.8);
+      }
+    }
+  }
+  .content {
+    flex: 1;
+    label {
+      @include flex;
+      margin-bottom: 10px;
+      h3 {
+        font-size: 16px;
+        font-weight: 600;
+        margin-right: 10px;
+        color: #000;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+      span {
+        font-size: 14px;
+        color: #666;
+        margin-right: 15px;
+        &.time {
+          position: relative;
+          &::before {
+            content: "";
+            position: absolute;
+            left: -7px;
+            top: -2px;
+            bottom: 0;
+            margin: auto;
+            width: 3px;
+            height: 3px;
+            background-color: #666;
+            @include rounded;
+          }
+        }
+      }
+    }
+  }
+  .tweetText {
+    font-size: 15px;
+    line-height: 19px;
+    color: #111;
+  }
+  footer {
+    @include flex;
+    flex-direction: column;
+    margin-top: 13px;
+    position: relative;
+    @include mobile {
+      gap: 10px;
+    }
+  }
+  &:hover {
+    .quote_tweet .inner {
+      background-color: white;
+    }
+  }
+  .quote_tweet {
+    flex: 1;
+    margin-left: 0;
+  }
+}
+
+.quote_tweet {
+  flex: 1;
+  margin-left: 50px;
+  margin-top: 20px;
+  &.inSingle {
+    margin-left: 0;
+    margin-bottom: 20px;
+  }
+  .inner {
+    border: 1px solid $color-navbar-border;
+    padding: 12px;
+    border-radius: 15px;
+    header {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      margin-top: 0;
+      margin-bottom: 10px;
+
+      img {
+        width: 20px;
+        height: 20px;
+        border-radius: 999px;
+      }
+      .name {
+        font-weight: 700;
+        font-size: 15px;
+        a {
+          color: #000;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+      .username,
+      .date {
+        font-size: 15px;
+        color: #999;
+      }
+    }
+    .tweet {
+      font-size: 15px;
+      color: #444;
+      border: none;
+      line-height: 20px;
+      padding: 0;
+      &:hover {
+        background-color: white;
+      }
+    }
+  }
+}

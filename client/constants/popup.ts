@@ -1,0 +1,2 @@
+export const CENTER_TOP_OK = "CENTER_TOP-OK";
+export const CENTER_TOP_ERROR = "CENTER_TOP-ERROR";

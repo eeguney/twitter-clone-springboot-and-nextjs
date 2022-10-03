@@ -1,0 +1,18 @@
+@import "mixin.scss";
+
+.trendsForYou {
+    background-color: $color-gray-200;
+    border-radius: 20px;
+    margin: 10px 20px;
+    @include flexCol;
+    a {
+      color: initial;
+    }
+    label {
+      padding: 20px;
+      font-size: 19px;
+      font-weight: 800;
+      padding-bottom: 0;
+      margin-bottom: 10px;
+    }
+  }

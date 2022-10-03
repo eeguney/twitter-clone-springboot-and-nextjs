@@ -1,0 +1,32 @@
+@import "mixin.scss";
+
+.profileTabs {
+  display: flex;
+  flex-direction: column;
+  .tabHeader {
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid $color-navbar-border;
+    button {
+      flex-grow: 1;
+      display: flex;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 15px;
+      color: #888;
+      @include transition;
+      &:hover {
+        background-color: $color-navbar-border;
+      }
+      &.active {
+        color: #000;
+        span {
+          border-bottom: 4px solid $color-main-blue;
+        }
+      }
+      span {
+        padding: 17px 0;
+      }
+    }
+  }
+}

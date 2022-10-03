@@ -1,0 +1,18 @@
+@import "mixin.scss";
+
+.mainRight {
+  display: none;
+  flex: 1;
+  position: sticky;
+  top: 100px;
+  @include pageHeader(white);
+
+  @include desktop {
+    max-width: $width-content-right;
+    @include flexCol;
+  }
+  .widgetContainer {
+    position: sticky;
+    top: 53px;
+  }
+}

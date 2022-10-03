@@ -1,0 +1,67 @@
+@import "mixin.scss";
+
+.newTweetLink {
+  @include rounded;
+  @include flexCol;
+  @include alignCenter;
+  @include justifyCenter;
+  @include transition;
+  position: absolute;
+  right: 20px;
+  bottom: $width-navbar + 30px;
+  background-color: $color-main-blue;
+  width: $width-navbar-new-post-link;
+  height: $width-navbar-new-post-link;
+  box-shadow: #00000014 0px 8px 28px;
+  &:hover {
+    background-color: $color-dark-blue;
+  }
+  svg {
+    @include desktop {
+      display: none;
+    }
+  }
+  label {
+    display: none;
+    @include desktop {
+      display: block;
+      color: white;
+      font-weight: 800;
+      font-size: 18px;
+    }
+  }
+  // responsive
+  @include tablet-s {
+    position: static;
+  }
+  @include desktop {
+    width: 90%;
+  }
+}
+
+.widgetTrendsForYou {
+  .item {
+    @include flex;
+    @include justifyBetween;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    &:hover {
+      background-color: $color-gray-300;
+    }
+    .left {
+      @include flexCol;
+      gap: 5px;
+      .desc,
+      .count {
+        font-size: 13px;
+        color: #666;
+      }
+      .hashtag {
+        font-size: 15px;
+        font-weight: 600;
+      }
+    }
+    .options {
+    }
+  }
+}

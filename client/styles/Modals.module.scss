@@ -1,0 +1,59 @@
+@import "mixin.scss";
+
+.quote_modal_inner {
+    .btn__close {
+        width: 35px;
+        height: 35px;
+        border-radius: 999px;;
+        display: flex;
+        align-items: center;
+        justify-items: center;
+        display: flex;
+        &:hover {
+            background-color: $color-navbar-border;
+        }
+    }
+    header {
+        display: flex;
+        margin-top: 15px;
+        img {
+            border-radius: 999px;
+        }
+        input {
+            flex: 1;
+            margin-left: 15px;
+            padding: 10px;
+            font-size: 18px;
+        }
+    }
+    footer {
+        margin-top: 15px;
+        display: flex;
+        justify-content: flex-end;
+      }
+}
+
+.like_and_retweet_modal_inner {
+    header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+        .btn__close {
+            width: 35px;
+            height: 35px;
+            border-radius: 999px;;
+            display: flex;
+            align-items: center;
+            justify-items: center;
+            display: flex;
+            &:hover {
+                background-color: $color-navbar-border;
+            }
+        }
+        label {
+            font-size: 22px;
+            font-weight: 600;
+            margin-left: 15px;
+        }
+    }
+}

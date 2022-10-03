@@ -1,0 +1,28 @@
+@import "mixin.scss";
+
+.btn-small {
+  background-color: $color-main-blue;
+  color: white;
+  font-weight: 600;
+  font-size: 15px;
+  padding: 8px 15px;
+  border: none;
+  @include rounded;
+  @include transition;
+  &:hover {
+    background-color: $color-dark-blue;
+  }
+}
+
+.btn-pure {
+  color: #222;
+  font-weight: 600;
+  font-size: 15px;
+  padding: 10px 16px;
+  border: 1px solid $color-gray-300;
+  @include rounded;
+  @include transition;
+  &:hover {
+    background-color: $color-gray-200;
+  }
+}

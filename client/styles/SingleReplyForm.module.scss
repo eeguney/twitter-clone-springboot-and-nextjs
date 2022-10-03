@@ -1,0 +1,31 @@
+@import "mixin.scss";
+
+
+.singleReplyForm {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid $color-navbar-border;
+    border-bottom: 1px solid $color-navbar-border;
+    padding: 20px 0;
+    .reply {
+        display: flex;
+        .userProfilePhoto {
+            img {
+              width: 48px;
+              height: 48px;
+              @include rounded;
+            }
+          }
+          input {
+            margin-left: 15px;
+            flex: 1;
+            font-size: 18px;
+          }
+    }
+    .replyFooter {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 10px;
+    }
+
+}

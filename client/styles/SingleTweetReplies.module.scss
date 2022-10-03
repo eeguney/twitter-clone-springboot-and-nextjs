@@ -1,0 +1,75 @@
+@import "mixin.scss";
+
+.singleTweetReplies {
+  .tweet {
+    @include flex;
+    padding: 20px;
+    border-bottom: 1px solid $color-navbar-border;
+    user-select: none;
+    cursor: pointer;
+    gap: 10px;
+    @include transition;
+    &:hover {
+      background-color: $color-navbar-links-hover;
+    }
+    .userProfilePhoto {
+      img {
+        width: 45px;
+        height: 45px;
+        @include rounded;
+      }
+    }
+    .content {
+      flex: 1;
+      label {
+        @include flex;
+        margin-bottom: 10px;
+        h3 {
+          font-size: 16px;
+          font-weight: 600;
+          margin-right: 10px;
+          a {
+            color: black;
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+        span {
+          font-size: 14px;
+          color: #666;
+          margin-right: 15px;
+          &.time {
+            position: relative;
+            &::before {
+              content: "";
+              position: absolute;
+              left: -7px;
+              top: -2px;
+              bottom: 0;
+              margin: auto;
+              width: 3px;
+              height: 3px;
+              background-color: #666;
+              @include rounded;
+            }
+          }
+        }
+      }
+    }
+    .tweetText {
+      font-size: 15px;
+      line-height: 19px;
+      color: #111;
+    }
+    footer {
+      @include flex;
+      flex-direction: column;
+      margin-top: 13px;
+      position: relative;
+      @include mobile {
+        gap: 10px;
+      }
+    }
+  }
+}

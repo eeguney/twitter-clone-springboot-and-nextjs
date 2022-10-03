@@ -1,0 +1,22 @@
+@import "mixin.scss";
+
+.content {
+  flex-grow: 1;
+  @include tablet-s {
+    width: 100%;
+  }
+  @include desktop-m {
+    width: auto;
+  }
+  .wrapper {
+    @include flex;
+    flex: 1;
+    min-height: 100%;
+    @include desktop-m {
+      width: $width-content-wrapper;
+    }
+    @media only screen and (max-width: 1277px) {
+      width: inherit;
+    }
+  }
+}

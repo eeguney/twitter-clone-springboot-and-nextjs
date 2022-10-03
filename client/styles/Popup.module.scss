@@ -1,0 +1,19 @@
+@import "mixin.scss";
+
+.centerOk {
+    width: 100%;
+    background-color: $color-dark-green;
+    font-size: 15px;
+    color: white;
+    font-weight: 600;
+    padding: 15px;
+}
+
+.centerError {
+    width: 100%;
+    background-color: $color-dark-red;
+    font-size: 15px;
+    color: white;
+    font-weight: 600;
+    padding: 15px;
+}

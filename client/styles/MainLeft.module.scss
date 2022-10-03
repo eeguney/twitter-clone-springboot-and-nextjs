@@ -1,0 +1,18 @@
+@import "mixin.scss";
+
+.mainLeft {
+  flex: 1;
+  max-width: $width-content-left;
+  border-left: 1px solid $color-navbar-border;
+  border-right: 1px solid $color-navbar-border;
+  .wrapper {
+    padding-bottom: 50px;
+    
+  }
+  @include tablet-s {
+    @include flexCol;
+  }
+
+  @include pageHeader(gray);
+  
+}

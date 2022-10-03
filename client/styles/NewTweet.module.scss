@@ -1,0 +1,48 @@
+@import "mixin.scss";
+
+.newTweet {
+    @include flexCol;
+    padding: 0 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid $color-navbar-border;
+    .top {
+      flex: 1;
+      @include flex;
+      @include alignCenter;
+      img {
+        @include rounded;
+        width: 45px;
+        height: 45px;
+        margin-right: 15px;
+      }
+      .hidden {
+        display: none;
+      }
+      .tweetInputs {
+        flex: 1;
+        input {
+          border: none;
+          width: 100%;
+          height: 90px;
+          padding: 0 10px;
+          font-size: 19px;
+          box-sizing: border-box;
+          &:focus {
+            outline: none;
+          }
+        }
+      }
+    }
+    .bottom {
+      @include flex;
+      @include justifyBetween;
+      .options {
+        display: flex;
+        gap: 5px;
+      }
+      
+    }
+    @include mobile {
+      display: none;
+    }
+  }
